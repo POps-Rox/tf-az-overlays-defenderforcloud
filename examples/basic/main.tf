@@ -1,13 +1,13 @@
 
 resource "azurerm_log_analytics_workspace" "workspace1" {
-  location            = module.azure_region.location
+  location            = module.azure_region.location_cli
   name                = "law1"
   resource_group_name = module.rg.resource_group_name
   sku                 = "PerGB2018"
 }
 
 resource "azurerm_log_analytics_workspace" "workspace2" {
-  location            = module.azure_region.location
+  location            = module.azure_region.location_cli
   name                = "law1"
   resource_group_name = module.rg.resource_group_name
   sku                 = "PerGB2018"
@@ -31,7 +31,7 @@ module "mod_security_center" {
     scope_id     = "/subscriptions/00000000-0000-0000-0000-000000000000"
     workspace_id = azurerm_log_analytics_workspace.workspace1.id
     }, {
-    scope_id     = module.rg.resource_group_name.id
+    scope_id     = module.rg.resource_group_id
     workspace_id = azurerm_log_analytics_workspace.workspace2.id
   }]
 }
