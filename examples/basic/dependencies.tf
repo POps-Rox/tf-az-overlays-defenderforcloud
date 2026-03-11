@@ -2,14 +2,14 @@
 # Licensed under the MIT License.
 
 module "azure_region" {
-  source  = "azurenoops/overlays-azregions-lookup/azurerm"
+  source  = "github.com/POps-Rox/tf-az-overlays-azregionslookup"
   version = "~> 1.0.0"
 
   azure_region = var.azure_region
 }
 
 module "rg" {
-  source  = "azurenoops/overlays-resource-group/azurerm"
+  source  = "github.com/POps-Rox/tf-az-overlays-resourcegroup"
   version = "~> 1.0.1"
 
   location                = module.azure_region.location_cli
