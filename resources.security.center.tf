@@ -7,6 +7,7 @@ resource "azurerm_security_center_subscription_pricing" "pricing" {
 }
 
 resource "azurerm_security_center_contact" "contact" {
+  name                = "default"
   email               = var.security_center_contact_email
   phone               = var.security_center_contact_phone
   alert_notifications = var.security_center_alert_notifications
