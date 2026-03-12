@@ -1,4 +1,3 @@
-
 terraform {
   required_version = ">= 1.0.0"
   required_providers {
@@ -7,7 +6,7 @@ terraform {
       version = ">= 2.0.0"
     }
     azurenoopsutils = {
-      source  = "POps-Rox/azurenoopsutils"
+      source  = "azurenoops/azurenoopsutils"
       version = "~> 1.0.4"
     }
   }
